@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Activate PyCharm virtual python environment to manage dependencies. This will look different in a different runtime environment
-source ./venv/bin/activate
+source ../venv/bin/activate
 
 # Clear files and logs from prior runs
 rm -rf ./F_*.fq ../F_*.bam ../F_*.bai gatk_*.log prep_files_*.log
