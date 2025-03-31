@@ -156,7 +156,7 @@ sudo docker run --rm -v /human:/human -v $(pwd)/:/data -w /data $gatk \
 sudo docker run --rm -v /human:/human -v $(pwd)/:/data -w /data $gatk \
   gatk ApplyBQSR \
   --java-options "-Xmx20g" \
-  --maximum-cycle-value 1000 \
+  --max-cycle 1000 \
   -R $refgenome \
   -I $samplename-pe.rd.fixed.sorted.reorder.bam \
   --bqsr-recal-file $samplename-pe.rd.fixed.sorted.reorder.realign.bam.recal.grp \
