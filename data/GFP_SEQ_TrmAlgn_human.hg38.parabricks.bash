@@ -144,6 +144,7 @@ SEQUENCE_DICTIONARY="${refgenome%.fasta}.dict"
 sudo docker run --rm -v /human:/human -v $(pwd)/:/data -w /data $gatk \
   gatk BaseRecalibrator \
   --java-options "-Xmx20g" \
+  --max-cycle 1000 \
   -R $refgenome \
   -I $samplename-pe.rd.fixed.sorted.reorder.bam \
   --known-sites $refvar/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz \
@@ -156,7 +157,6 @@ sudo docker run --rm -v /human:/human -v $(pwd)/:/data -w /data $gatk \
 sudo docker run --rm -v /human:/human -v $(pwd)/:/data -w /data $gatk \
   gatk ApplyBQSR \
   --java-options "-Xmx20g" \
-  --max-cycle 1000 \
   -R $refgenome \
   -I $samplename-pe.rd.fixed.sorted.reorder.bam \
   --bqsr-recal-file $samplename-pe.rd.fixed.sorted.reorder.realign.bam.recal.grp \
