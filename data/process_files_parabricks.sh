@@ -4,7 +4,7 @@
 source ../venv/bin/activate
 
 # Clear files and logs from prior runs
-rm -rf ./F_*.fq ../F_*.bam ../F_*.bai gatk_*.log prep_files_*.log
+rm -rf ../ND6W8N_*.bam ../ND6W8N_*.bai gatk_*.log prep_files_*.log
 
 # Clear intermediate processing files
 rm -rf ../processing/1-fastqc/F* ../processing/2-trim/F* ../processing/3-fastqc/F* ../processing/4-bwa/F*
