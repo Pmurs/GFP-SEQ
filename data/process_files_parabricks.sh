@@ -21,5 +21,5 @@ do
     --wrap="echo Preparing sample $i")
 
     # Submit alignment job as a dependent job
-  sbatch --dependency=afterok:$prep_job_id GFP_SEQ_TrmAlgn_human.hg38.parabricks.bash "$i"
+  sbatch --dependency=afterok:$prep_job_id nanopore_pipeline.bash "$i"
 done
