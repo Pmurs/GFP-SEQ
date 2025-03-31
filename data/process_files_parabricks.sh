@@ -4,7 +4,7 @@
 source ../venv/bin/activate
 
 # Clear files and logs from prior runs
-rm -rf ../ND6W8N_*.bam ../ND6W8N_*.bai gatk_*.log prep_files_*.log
+rm -rf ../ND6W8N_*.bam ../ND6W8N_*.bai nanopore_mapping_*.log prep_files_*.log
 
 # Clear intermediate processing files
 rm -rf ../processing/1-fastqc/F* ../processing/2-trim/F* ../processing/3-fastqc/F* ../processing/4-bwa/F*
@@ -21,5 +21,5 @@ do
     --wrap="echo Preparing sample $i")
 
     # Submit alignment job as a dependent job
-  sbatch --dependency=afterok:$prep_job_id nanopore_pipeline.bash "$i"
+  sbatch --dependency=afterok:"$prep_job_id" nanopore_pipeline.bash "$i"
 done
