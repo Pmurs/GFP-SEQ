@@ -31,7 +31,7 @@ fastqc -o processing/1-fastqc ./data/${samplename}.fq
 
 # === 2. FILTERING (optional) ===
 echo "Filtering reads with Filtlong..."; date
-filtlong --min_length 400 ./data/${samplename}.fq > processing/2-filtered/${samplename}.filtered.fq
+filtlong --min_length 100 --max_length 1000 ./data/${samplename}.fq > processing/2-filtered/${samplename}.filtered.fq
 
 # === 3. ALIGNMENT with Minimap2 ===
 echo "Aligning with Minimap2..."; date
