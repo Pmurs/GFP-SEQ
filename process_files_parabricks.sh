@@ -15,8 +15,11 @@ declare -a arr=("ND6W8N_1_Alu_SB" "ND6W8N_2_Alu_Cout" "ND6W8N_3_Fat_SB" "ND6W8N_
 # Start processing each sample
 for i in "${arr[@]}"
 do
-  echo "$i"
-  prep_job_id=$(sbatch --parsable --job-name="prep_files" --partition=LocalQ --time=24:00:00 --output="prep_files_%j.log")
-  # Submit alignment job as a dependent job
+  prep_job_id=$(sbatch --parsable --job-name="prep_files_${i}" \
+    --partition=LocalQ --time=24:00:00 \
+    --output="prep_files_${i}_%j.log" \
+    --wrap="echo Preparing sample $i")
+
+    # Submit alignment job as a dependent job
   sbatch --dependency=afterok:$prep_job_id GFP_SEQ_TrmAlgn_human.hg38.parabricks.bash "$i"
 done
