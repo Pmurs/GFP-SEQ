@@ -45,7 +45,7 @@ echo "2th trim galore start on"; date; echo "====="
 trim_galore --illumina -o ./processing/2-trim \
 ./data/$samplename.fq \
 
-mv ./processing/2-trim/$samplename_trimmed.fq ./processing/2-trim/$samplename.trimmed.fq
+mv ./processing/2-trim/"${samplename}"_trimmed.fq ./processing/2-trim/"${samplename}".trimmed.fq
 
 echo "====="; echo "2th trim galore end on"; date
 
