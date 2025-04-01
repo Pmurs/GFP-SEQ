@@ -3,7 +3,6 @@
 #SBATCH -J nanopore_mapping
 #SBATCH -o nanopore_mapping_%A.log
 #SBATCH -n 8
-#SBATCH --mem=32G
 
 echo "Nanopore DNA mapping pipeline started on:"; date
 echo "========================================="
