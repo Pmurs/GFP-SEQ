@@ -12,11 +12,17 @@ echo "========================================="
 source Paul_env_human_parabricks.bash  # <-- loads refgenome, refvar, etc.
 
 # === USER PARAMETERS ===
+sampleroot=..
 samplename=$1         # Sample name (expects ./data/${samplename}.fq)
 np=8                  # Number of threads
 
+cd $sampleroot || exit
+echo "sampleroot is:"
+pwd
 echo "Sample: $samplename"
+# shellcheck disable=SC2154
 echo "Reference genome: $refgenome"
+# shellcheck disable=SC2154
 echo "Ref var path: $refvar"
 
 # === DIRECTORY SETUP ===
