@@ -1,2 +1,2 @@
 # Core medaka requirement
-medaka>=1.6.1
+medaka==1.6.1
