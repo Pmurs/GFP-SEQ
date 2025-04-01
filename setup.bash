@@ -21,7 +21,7 @@ sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 
 # Make sure Python 3.9 is installed
-sudo apt install -y python3.9-venv
+sudo apt install -y python3.9-dev python3.9-venv
 
 # Create a new venv using Python 3.9
 sudo make

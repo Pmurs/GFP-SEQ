@@ -1,2 +1,8 @@
 # Core medaka requirement
 medaka==1.6.1
+
+# Works well with medaka version
+tensorflow==2.8.0
+
+# medaka requires numpy<2.0
+numpy==1.23.5
