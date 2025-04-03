@@ -17,7 +17,7 @@ medaka
 echo "✅ All tools installed!"
 
 # python 3.9 package isn't indexed by default
-sudo add-apt-repository ppa:deadsnakes/ppa
+sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt update
 
 # Make sure Python 3.9 is installed
